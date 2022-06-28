@@ -1,4 +1,4 @@
 # BowlingGameKata
 Bowling Game Kata repository
 
-This Bowling Game Kata is a challenging assignment I got from my tutor/trainer to learn TDD.
+When gaining work experience as a volunteer at BEE-ideas June 2022, my tutor/trainer gave met this challenging assignment to learn Test Driven Development. To be continued... - Work In Progress
