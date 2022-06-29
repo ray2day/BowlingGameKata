@@ -19,25 +19,52 @@ namespace BowlingGameKata
         public int Score()
         {
             int score = 0;
-            int rollIndex = 0;
+            int frameIndex = 0;
 
             for (int frame = 0; frame < 10; frame++)
             {
-                if (IsSpare(rollIndex))
+                if (IsStrike(frameIndex))
                 {
-                    score += 10 + _rolls[rollIndex + 2];
+                    score = StrikeBonus(score, frameIndex);
+                    frameIndex++;
+                }
+                else if (IsSpare(frameIndex))
+                {
+                    score = SpareBonus(score, frameIndex);
+                    frameIndex += 2;
                 }
                 else
                 {
-                    score += _rolls[rollIndex] + _rolls[rollIndex + 1];
+                    score = SumOfBallsInFrame(score, frameIndex);
+                    frameIndex += 2;
                 }
-
-                rollIndex += 2;
             }
 
             return score;
         }
 
+        private bool IsStrike(int frameIndex)
+        {
+            return _rolls[frameIndex] == 10;
+        }
+
+        private int SumOfBallsInFrame(int score, int frameIndex)
+        {
+            score += _rolls[frameIndex] + _rolls[frameIndex + 1];
+            return score;
+        }
+
+        private int SpareBonus(int score, int frameIndex)
+        {
+            score += 10 + _rolls[frameIndex + 2];
+            return score;
+        }
+
+        private int StrikeBonus(int score, int frameIndex)
+        {
+            score += 10 + _rolls[frameIndex + 1] + _rolls[frameIndex + 2];
+            return score;
+        }
 
         private bool IsSpare(int i)
         {
