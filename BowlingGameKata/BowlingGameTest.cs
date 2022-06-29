@@ -28,15 +28,19 @@ namespace BowlingGameKata
         [Fact]
         public void TestGutterGame()
         {
-            for (int i = 0; i < 20; i++)
-            {
-                g.Roll(0);
-            }
+            RollMany(20, 0);
 
             Assert.Equal(0, g.Score);
         }
-     
-        //public void TestAllOnes()
+
+
+        [Fact]
+        public void TestAllOnes()
+        {
+            RollMany(20, 1);
+
+            Assert.Equal(20, g.Score);
+        }
 
         //public void TestOneSpare()
 
@@ -46,5 +50,13 @@ namespace BowlingGameKata
 
         // etc..
 
+
+        private void RollMany(int n, int pins)
+        {
+            for (int i = 0; i < n; i++)
+            {
+                g.Roll(pins);
+            }
+        }
     }
 }
