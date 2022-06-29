@@ -30,19 +30,28 @@ namespace BowlingGameKata
         {
             RollMany(20, 0);
 
-            Assert.Equal(0, g.Score);
+            Assert.Equal(0, g.Score());
         }
-
 
         [Fact]
         public void TestAllOnes()
         {
             RollMany(20, 1);
 
-            Assert.Equal(20, g.Score);
+            Assert.Equal(20, g.Score());
         }
 
-        //public void TestOneSpare()
+        [Fact]
+        public void TestOneSpare()
+        {
+            RollSpare();
+            g.Roll(3);
+
+            RollMany(17, 0);
+
+            Assert.Equal(16, g.Score());
+        }
+
 
         //public void TestOneStrike()
 
@@ -50,6 +59,12 @@ namespace BowlingGameKata
 
         // etc..
 
+
+        private void RollSpare()
+        {
+            g.Roll(5);
+            g.Roll(5);
+        }
 
         private void RollMany(int n, int pins)
         {
