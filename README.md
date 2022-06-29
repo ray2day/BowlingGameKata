@@ -1,4 +1,4 @@
 # BowlingGameKata
 Bowling Game Kata repository
 
-When gaining work experience as a volunteer at BEE-ideas June 2022, my tutor/trainer gave met this challenging assignment to learn Test Driven Development. To be continued... - Work In Progress
+June 2022. When gaining work experience as a volunteer at BEE-ideas, my trainer advised me to get into learning clean coding. So I bought the book Clean Coding written by Robert C. Martin (Uncle Bob). It's the bible of clean coding and teaches the reader to develop software in a more efficiently / Agile way. It is a very thick book and though it is interesting it has some tough matter. So half way through, still busy reading it, I asked my teacher if he had something more hands-on. So for the time that I wasn't reading, he gave this challenging Bowling Game Kata to me. An difficult assigment to learn more about Test Driven Development. This repository exists of the final code after building/doing several tests using the red-green-refactoring approach.
